@@ -9,8 +9,8 @@ projects](https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP).
 
 * Dont' enforce docblocks. We try to rely on type information as much as
   possible.
-* Allow long line lengths. Our test cases are complete sentences and
-  therefore exceed the line limit.
+* Allow longer line lengths. Lines longer than 120 chars will generate a
+  warning. Ignore line length in `tests/*` directory.
 * Allow `assert` statements. We still don't use them for all-purpose
   validation, but for some checks that don't affect production they are
   useful.
@@ -33,3 +33,13 @@ projects](https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP).
     	<arg name="encoding" value="UTF-8"/>
     </ruleset>
     ```
+	
+## How to run
+
+The installation automatically installs the `phpcs` (style checker) and
+`phpcbf` (style fixer) binaries into `vendor/bin`. When your `.phpcs.xml`
+file is in place, run the command
+
+	vendor/bin/phpcs
+	
+

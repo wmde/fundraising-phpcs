@@ -44,3 +44,8 @@ file is in place, run the command
 	vendor/bin/phpcs
 	
 
+## Versioning
+This repository should create a new major release whenever the mediawiki
+coding standard has a new major release.
+
+

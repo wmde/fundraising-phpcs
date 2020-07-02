@@ -12,14 +12,15 @@ projects](https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP).
 * Allow longer line lengths. Lines longer than 120 chars will generate a
   warning. Ignore line length in `tests/*` directory.
 * Allow `assert` statements. We still don't use them for all-purpose
-  validation, but for some checks that don't affect production they are
-  useful.
+  validation, but for some checks that matter in development but not in
+  production, `assert` has a few nanoseconds better performance than
+  `if` + `throw`.
 
 ## How to install
 
 1. Require the library as a composer dependency:
 
-	composer require-dev wmde/fundraising-phpcs
+		composer require-dev wmde/fundraising-phpcs
 
 
 2. Create a .phpcs.xml with the following minimal configuration:

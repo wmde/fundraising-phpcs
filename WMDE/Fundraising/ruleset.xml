@@ -18,6 +18,7 @@
 
 		<!-- Don't force docblocks for scope annotation, we use PHP keywords for that -->
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected" />
 
         <!-- TODO: Add CodeSniffer UnusedUseSniff instead & configure it for Doctrine -->
         <exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />

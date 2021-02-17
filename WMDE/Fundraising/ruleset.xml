@@ -16,6 +16,9 @@
         <!-- Allow indentation in Docblock annotations for setting Doctrine indexes -->
         <exclude name="MediaWiki.Commenting.DocComment.SpacingDocTag" />
 
+		<!-- Don't force docblocks for scope annotation, we use PHP keywords for that -->
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+
         <!-- TODO: Add CodeSniffer UnusedUseSniff instead & configure it for Doctrine -->
         <exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />
 

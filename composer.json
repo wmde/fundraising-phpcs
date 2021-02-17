@@ -2,7 +2,7 @@
     "name": "wmde/fundraising-phpcs",
     "description": "PHP coding style for the WMDE FUN team",
     "require": {
-        "mediawiki/mediawiki-codesniffer": "^31"
+        "mediawiki/mediawiki-codesniffer": "^35"
     },
     "license": "GPL-2.0-or-later"
 }

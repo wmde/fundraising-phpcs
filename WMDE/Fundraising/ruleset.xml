@@ -4,7 +4,10 @@
         <!-- we'll define our own line length rule that ignores long test names -->
         <exclude name="Generic.Files.LineLength" />
 
-        <!-- Docblocks should be completely optional, type annotations are better -->
+        <!-- Docblocks should be completely optional, type annotations are better 
+            See https://phabricator.wikimedia.org/T258925
+            See https://phabricator.wikimedia.org/T288754
+        -->
         <exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPrivate" />
         <exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationProtected" />
         <exclude name="MediaWiki.Commenting.FunctionComment.MissingDocumentationPublic" />
@@ -16,9 +19,9 @@
         <!-- Allow indentation in Docblock annotations for setting Doctrine indexes -->
         <exclude name="MediaWiki.Commenting.DocComment.SpacingDocTag" />
 
-		<!-- Don't force docblocks for scope annotation, we use PHP keywords for that -->
-		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
-		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected" />
+        <!-- Don't force docblocks for scope annotation, we use PHP keywords for that -->
+        <exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
+        <exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected" />
 
         <!--
             The following sniffs are interfering with PHP 8.1 intersection types using "&"

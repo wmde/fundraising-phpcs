@@ -20,9 +20,18 @@
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationPrivate" />
 		<exclude name="MediaWiki.Commenting.PropertyDocumentation.MissingDocumentationProtected" />
 
-		<!-- Allow assert - we use it for some domain-specific sanity checks where the type system would -->
-		<!-- TODO: Add sniff to make sure assert is only called with boolean expressions -->
-		<exclude name="MediaWiki.Usage.ForbiddenFunctions.assert" />
+        <!--
+            The following sniffs are interfering with PHP 8.1 intersection types using "&"
+            Remove the exclusions when they are ready for PHP 8.1
+            See https://github.com/squizlabs/PHP_CodeSniffer/issues/3479
+            See https://phabricator.wikimedia.org/T305140
+        -->
+        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterReference" />
+        <exclude name="MediaWiki.Commenting.FunctionComment.ParamPassByReference" />
+
+        <!-- Allow assert - we use it for some domain-specific sanity checks where the type system would -->
+        <!-- TODO: Add sniff to make sure assert is only called with boolean expressions -->
+        <exclude name="MediaWiki.Usage.ForbiddenFunctions.assert" />
     </rule>
 
     <rule ref="Generic.Files.LineLength">

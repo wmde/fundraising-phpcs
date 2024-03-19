@@ -7,14 +7,13 @@ projects](https://www.mediawiki.org/wiki/Manual:Coding_conventions/PHP).
 
 ## Deviations from the Mediawiki conventions
 
-* Dont' enforce docblocks. We try to rely on type information as much as
-  possible.
 * Allow longer line lengths. Lines longer than 120 chars will generate a
   warning. Ignore line length in `tests/*` directory.
-* Allow `assert` statements. We still don't use them for all-purpose
-  validation, but for some checks that matter in development but not in
-  production, `assert` has a few nanoseconds better performance than
-  `if` + `throw`.
+* Allow unknown annotations.
+* Do not check PHPUnit tests for `@covers` annotations - we're using PHP
+    attributes which are not supported yet. See https://phabricator.wikimedia.org/T329048
+    We're enforcing the existence of coverage information with the `requireCoversAnnotation`
+    config setting of PHPUnit.
 
 ## How to install
 
@@ -45,7 +44,10 @@ file is in place, run the command
 	
 
 ## Versioning
-This repository should create a new major release whenever the mediawiki
-coding standard has a new major release.
+This repository should create a new major release whenever the MediaWiki
+coding standard has a new major release or you add a rule that will break
+existing code.
+
+If you disable a rule, you can do a minor release.
 
 

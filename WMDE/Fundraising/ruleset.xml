@@ -9,7 +9,17 @@
         <exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
 
         <!-- Allow indentation in Docblock annotations for setting Doctrine indexes -->
-        <exclude name="MediaWiki.Commenting.DocComment.SpacingDocTag" />
+		<exclude name="MediaWiki.Commenting.DocComment.SpacingDocTag" />
+
+		<!--
+			Disable requiring @covers annotations on tests.
+			We're using the `requireCoversAnnotation` PHPUnit setting instead.
+			Starting with PHPUnit 11, we'll no longer have annotations but 
+			PHP attributes, causing this sniff to generate errors for every method in our tests.
+			See https://phabricator.wikimedia.org/T329048 for a ticket that
+			might add attribute attribute support. If that ticket is done, we can enable the sniff again
+		--> 
+		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
     </rule>
 
     <rule ref="Generic.Files.LineLength">
